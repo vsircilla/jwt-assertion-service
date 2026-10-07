@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+jwt-assertion:
+  # Microsoft Entra (Azure AD) Configuration
+  entra:
+    tenant-id: ${ENTRA_TENANT_ID:your-tenant-id}
+    client-id: ${ENTRA_CLIENT_ID:your-client-id}
+    issuer: https://login.microsoftonline.com/${ENTRA_TENANT_ID}/v2.0
+    jwks-url: https://login.microsoftonline.com/${ENTRA_TENANT_ID}/discovery/v2.0/keyset
+
+  # Our Private Key for signing assertions (PEM format)
+  signing:
+    private-key-path: ${SIGNING_PRIVATE_KEY_PATH:./keys/private-key.pem}
+    key-id: ${SIGNING_KEY_ID:assertion-key-1}
+    algorithm: RS256
+
+  # ServiceNow Configuration
+  servicenow:
+    instance-url: ${SERVICENOW_INSTANCE_URL:https://your-instance.service-now.com}
+    client-id: ${SERVICENOW_CLIENT_ID:your-servicenow-client-id}
+    username: ${SERVICENOW_USERNAME:your-username}
+    password: ${SERVICENOW_PASSWORD:your-password}
+    token-endpoint: /api/x_your_module/oauth_token
+    scope: ${SERVICENOW_SCOPE:}
+
+logging:
+  level:
+    com.example.jwtassertion: DEBUG

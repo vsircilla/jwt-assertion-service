@@ -1,0 +1,57 @@
+# Build artifacts
+target/
+!target/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keys (SENSITIVE - private keys must never be committed)
+src/main/resources/keys/*.pem
+!src/main/resources/keys/.gitkeep
+
+# Environment/config files
+.env
+.env.*
+*.env
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Maven
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.versions
+
+# Java
+*.class
+
+# Eclipse
+.classpath
+.project
+
+# IntelliJ
+*.jar
+*.war
+*.ear
+
+# Spring Boot
+*.pid
